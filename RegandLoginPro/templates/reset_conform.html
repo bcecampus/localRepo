@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>reset password</title>
+        <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/js/mdb.min.js"></script>
+</head>
+<body>
+        <h2  style="background-color: grey;size: 40px;text-align: center;height: 30px;color: white">BCE Bhagalpur</h2><br>
+        Dear {{ uname }},<br><br>
+        We have sent you this email in response to your request to reset your password on {{ email }}.
+        After you reset your password, any information stored in My Account will be deleted as a security measure.<br>
+         To reset your password , please follow the below details:<br>
+
+        <p>The OTP to reset password is given below</p><br>
+
+        <p class="animated pulse infinite"><strong>OTP</strong>&nbsp;&nbsp;:&nbsp;&nbsp;{{ user }}<br></p>
+        <br>
+        We recommend that you keep your password secure and not share it with anyone.If you feel your password has been
+        compromised, you can change it by going to your  My Account Page and clicking on the "Change Email Address or Password" link.
+        If you need help, or you have any other questions, feel free to email ${customer-service-email}, or call ${site-name}
+        customer service toll-free at ${site-toll-free-number}
+
+</body>
+</html>

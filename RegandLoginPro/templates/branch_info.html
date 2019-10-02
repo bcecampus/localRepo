@@ -1,0 +1,317 @@
+
+<html>
+<head>
+    <title>Branch info</title>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.min.js"></script>
+
+</head>
+<body>
+<center><p class="display-4 fixed-top" style="background-color: cornflowerblue;color: white" >Bce Branch Info</p></center>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-3 fixed-top" style="margin-top: 70px">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+        aria-controls="v-pills-home" aria-selected="true">Faculty</a>
+      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+        aria-controls="v-pills-profile" aria-selected="false">Time Table</a>
+      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+        aria-controls="v-pills-messages" aria-selected="false">Syllabus</a>
+      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+        aria-controls="v-pills-settings" aria-selected="false">Notice</a>
+    </div>
+  </div>
+  <div class="offset-md-3 col-md-9" style="margin-top: 70px">
+    <div class="tab-content" id="v-pills-tabContent">
+
+
+
+
+      <div class="tab-pane fade show active scrollspy-example" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          <div class="row">
+
+              {% for i in faculyInfo %}
+              <div class="col-md-4">
+                <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+                <div class="view view-cascade">
+                    <img src="{{ i.profile_photo.url }}" style="height: 300px" class="card-img-top" alt="">
+                     <a>
+                        <div class="mask rgba-white-slight"></div>
+                     </a>
+                </div>
+                <div class="card-body card-body-cascade">
+                     <h5 class="pink-text"><i class=""></i>{{ i.faculty_branch }}</h5>
+                    <h4 class="card-title">{{ i.faculty_name }}</h4>
+                     <p class="card-text">{{ i.faculty_description }}</p>
+                    
+                </div>
+                </div>
+             </div>
+                {% endfor %}
+
+              <div class="col-md-4">
+                  <h4 class="py-lg-4 pb-4 text-center">Narrower</h4>
+                <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+                <div class="view view-cascade">
+                    <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top" alt="">
+                     <a>
+                        <div class="mask rgba-white-slight"></div>
+                     </a>
+                </div>
+                <div class="card-body card-body-cascade">
+                     <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+                    <h4 class="card-title">Cheat day inspirations</h4>
+                     <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                    <a class="btn btn-unique">Button</a>
+                </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                  <h4 class="py-lg-4 pb-4 text-center">Narrower</h4>
+                <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+                <div class="view view-cascade">
+                    <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top" alt="">
+                     <a>
+                        <div class="mask rgba-white-slight"></div>
+                     </a>
+                </div>
+                <div class="card-body card-body-cascade">
+                     <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+                    <h4 class="card-title">Cheat day inspirations</h4>
+                     <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                    <a class="btn btn-unique">Button</a>
+                </div>
+                </div>
+
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4">
+                <h4 class="py-lg-4 pb-4 text-center">Narrower</h4>
+                <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+                <div class="view view-cascade">
+                    <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top" alt="">
+                     <a>
+                        <div class="mask rgba-white-slight"></div>
+                     </a>
+                </div>
+                <div class="card-body card-body-cascade">
+                     <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+                    <h4 class="card-title">Cheat day inspirations</h4>
+                     <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                    <a class="btn btn-unique">Button</a>
+                </div>
+                </div>
+             </div>
+
+              <div class="col-md-4">
+                  <h4 class="py-lg-4 pb-4 text-center">Narrower</h4>
+                <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+                <div class="view view-cascade">
+                    <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top" alt="">
+                     <a>
+                        <div class="mask rgba-white-slight"></div>
+                     </a>
+                </div>
+                <div class="card-body card-body-cascade">
+                     <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+                    <h4 class="card-title">Cheat day inspirations</h4>
+                     <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                    <a class="btn btn-unique">Button</a>
+                </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                  <h4 class="py-lg-4 pb-4 text-center">Narrower</h4>
+                <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+                <div class="view view-cascade">
+                    <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top" alt="">
+                     <a>
+                        <div class="mask rgba-white-slight"></div>
+                     </a>
+                </div>
+                <div class="card-body card-body-cascade">
+                     <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+                    <h4 class="card-title">Cheat day inspirations</h4>
+                     <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                    <a class="btn btn-unique">Button</a>
+                </div>
+                </div>
+
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4">
+                <h4 class="py-lg-4 pb-4 text-center">Narrower</h4>
+                <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+                <div class="view view-cascade">
+                    <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top" alt="">
+                     <a>
+                        <div class="mask rgba-white-slight"></div>
+                     </a>
+                </div>
+                <div class="card-body card-body-cascade">
+                     <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+                    <h4 class="card-title">Cheat day inspirations</h4>
+                     <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                    <a class="btn btn-unique">Button</a>
+                </div>
+                </div>
+             </div>
+
+              <div class="col-md-4">
+                  <h4 class="py-lg-4 pb-4 text-center">Narrower</h4>
+                <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+                <div class="view view-cascade">
+                    <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top" alt="">
+                     <a>
+                        <div class="mask rgba-white-slight"></div>
+                     </a>
+                </div>
+                <div class="card-body card-body-cascade">
+                     <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+                    <h4 class="card-title">Cheat day inspirations</h4>
+                     <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                    <a class="btn btn-unique">Button</a>
+                </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                  <h4 class="py-lg-4 pb-4 text-center">Narrower</h4>
+                <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+                <div class="view view-cascade">
+                    <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" class="card-img-top" alt="">
+                     <a>
+                        <div class="mask rgba-white-slight"></div>
+                     </a>
+                </div>
+                <div class="card-body card-body-cascade">
+                     <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+                    <h4 class="card-title">Cheat day inspirations</h4>
+                     <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                    <a class="btn btn-unique">Button</a>
+                </div>
+                </div>
+
+              </div>
+          </div>
+          </div>
+
+
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <div class="col-4">
+    <!--Card-->
+    <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+
+      <!--Card image-->
+      <div class="view view-cascade">
+        <center><img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" width="200px" height="200px" style="border-radius: 300px"
+          alt=""></center>
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--/.Card image-->
+
+      <!--Card content-->
+      <div class="card-body card-body-cascade">
+        <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+        <!--Title-->
+        <h4 class="card-title">Cheat day inspirations</h4>
+        <!--Text-->
+        <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+          laboriosam, nisi ut
+          aliquid ex ea commodi.</p>
+        <a class="btn btn-unique">Button</a>
+      </div>
+      <!--/.Card content-->
+
+    </div>
+    <!--/.Card-->
+      </div>
+      </div>
+
+
+      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">.<h1>Hi</h1>
+          <div class="col-4">
+    <!--Card-->
+    <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+
+      <!--Card image-->
+      <div class="view view-cascade">
+        <center><img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" width="200px" height="200px" style="border-radius: 300px"
+          alt=""></center>
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--/.Card image-->
+
+      <!--Card content-->
+      <div class="card-body card-body-cascade">
+        <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+        <!--Title-->
+        <h4 class="card-title">Cheat day inspirations</h4>
+        <!--Text-->
+        <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+          laboriosam, nisi ut
+          aliquid ex ea commodi.</p>
+        <a class="btn btn-unique">Button</a>
+      </div>
+      <!--/.Card content-->
+
+    </div>
+    <!--/.Card--></div>
+      </div>
+
+
+      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">.<h1>Hi</h1><div class="col-4">
+    <!--Card-->
+    <div class="card card-cascade narrower mb-4" style="margin-top: 28px">
+
+      <!--Card image-->
+      <div class="view view-cascade">
+        <center><img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" width="200px" height="200px" style="border-radius: 300px"
+          alt=""></center>
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--/.Card image-->
+
+      <!--Card content-->
+      <div class="card-body card-body-cascade">
+        <h5 class="pink-text"><i class="fas fa-utensils"></i> Culinary</h5>
+        <!--Title-->
+        <h4 class="card-title">Cheat day inspirations</h4>
+        <!--Text-->
+        <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+          laboriosam, nisi ut
+          aliquid ex ea commodi.</p>
+        <a class="btn btn-unique">Button</a>
+      </div>
+      <!--/.Card content-->
+
+    </div>
+    <!--/.Card--></div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+</body>
+</html>

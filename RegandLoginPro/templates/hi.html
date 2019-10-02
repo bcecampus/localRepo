@@ -1,0 +1,230 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>User</title>
+<!-- Font Awesome -->    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.min.js"></script>
+
+<script>
+    // popovers Initialization
+$(function () {
+$('[data-toggle="popover"]').popover(size=500)
+
+})
+
+</script>
+
+
+</head>
+<body style="overflow-y: visible;overflow-x:hidden">
+    <div class="row" style="background:rgba(161,53,243,0.94)">
+
+            <div class="col-md-1.5">
+                <span class="fa-stack fa-3x">
+                <i class="fa fa-circle  fa-stack-2x" style="color: blue"></i>
+                <strong class="fa-stack-1x calendar-text { margin-top: .3em; }" style="color: white;font-size: 60px">4</strong>
+                    </span>
+            </div>
+            <div class="col-md-2.5" style="">
+            <strong style="font-size: 25px;color: white">
+               {% for k in lform2 %}
+                {{ k.name }}&nbsp;|&nbsp;
+                {{ k.branch }}
+            </strong>
+                   <br>
+                   <a href="" ><i class="fa fa-user fa-3x" aria-hidden="true" about="Batch"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <a href=""> <i class="fa fa-users fa-3x" aria-hidden="true" about="Branch"></i></a>
+
+
+            </div>
+            <div class="col-md-8 text-center" style="margin-top: 20px;">
+                <a href="/library/" ><button type="button" class="btn btn-outline-white waves-effect">Campus Library</button></a>
+                <a href="/branch_info/"><button type="button" class="btn btn-outline-white waves-effect">Branch info</button></a>
+                <button type="button" class="btn btn-outline-white waves-effect">Suggestions</button>
+
+
+
+
+
+
+
+                <!-- Button trigger modal -->
+<button id="modalActivate" type="button" class="btn btn-white animated pulse infinite" data-toggle="modal" data-target="#exampleModalPreview">
+  online Members
+</button>
+<!-- Modal -->
+<div class="modal fade left" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-side modal-top-left" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalPreviewLabel">Online Members</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% for o in online_members %}
+            <div class="spinner-grow text-success" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+            {{ o.Active_member.capitalize }}<br/><hr>
+            {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#                <a href="/online/"><button class="btn btn-white" type="button" disabled>#}
+{#  <span class="spinner-grow spinner-grow-sm text-success" role="status" aria-hidden="true"></span>#}
+{#  ONLINE MEMBERS#}
+{#                </button></a>#}
+                <a href="" ><i class="fa fa-plus-circle fa-2x" aria-hidden="true"  style="color: white;float: right;margin-top: 15px"></i></a>
+                <p style="float: right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <a href="/logout/"><i class="fa fa-power-off fa-2x" aria-hidden="true" style="color: white;float: right;margin-top: 15px"></i></a>
+
+            </div>
+
+
+    </div>
+    </div>
+
+
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-4">
+
+            <div   style="background:white;border: 1px solid white;border-radius: 5px;box-shadow: 10px 10px 20px grey;margin-left: -12px;color: black;overflow:scroll;height: 350px" class="sticky-top" >
+            {%  for i in lform %}
+            {{ i.roll }}&nbsp;<b>:</b>&nbsp;{{ i.name }}
+            <hr>
+            {% endfor %}
+            </div>
+</div>
+<div class="col-md-8" style="">
+
+    {% for j in fform %}
+        <div class="card">
+  <div class="card-header" style="background-color: lightseagreen;color: white;padding-bottom: 0px">
+      {%  for i in lform2 %}
+            <form action="/login/{{ j.date }}/{{ k.name }}/" method="post" style="padding-bottom: 0px;">
+          {% csrf_token %}
+  <img src="https://mdbootstrap.com/img/Photos/Avatars/img(31).jpg" width="35px" height="35px" style="border: 1px solid white;border-radius: 30px"
+      alt="Responsive image">&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary fa fa-heart fa-2x" style="border:5px white;padding: 5px; border-radius: 50px" name="like"></button>&nbsp;{{ j.like }}
+                <br>
+          {{ j.name.capitalize }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div style="float: right;padding-bottom: 0px;">{{ j.date }}</div>
+          </form>
+
+  </div>
+  <div class="card-body">
+    <p class="card-text" style="visibility: visible; animation-name: fadeInUp; animation-delay: 0.2s;">{{ j.t1 }}</p>
+    {% if j.image %}
+        <div class="view overlay zoom">
+  <p class="card-text"><img src="/media/{{ j.image }}" class="img-fluid" alt="zoom">
+  <div class="mask flex-center waves-effect waves-light">
+  </div>
+</div>
+
+  {% endif %}
+      {% for m in cform %}
+              {% if m.feedback_id == j.id %}
+                  <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;<strong style="color: blue">{{ m.comment_name }}</strong>&nbsp;<strong>|</strong>&nbsp;
+          <em style="color: green;font-size: 11px"> {{ m.comment_date}}</em>&nbsp;&nbsp;
+          <i class="fa fa-chevron-right" aria-hidden="true" style="color: coral"></i>&nbsp;&nbsp;{{ m.comment_text }}&nbsp;&nbsp;
+          </p>
+
+          {% endif %}
+          {% endfor %}
+<form action="/comment/{{ j.date }}/{{ i.name }}/" method="post">
+{% csrf_token %}
+      <div class="form-group shadow-textarea">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/img(31).jpg" width="35px" height="35px" style="border: 1px solid white;border-radius: 30px" alt="Responsive image">
+
+  <label for="exampleFormControlTextarea6">{{ i.name }}</label>
+          <div class="container">
+              <div class="row">
+                  <div class="col-offset-2 col-md-8">
+                    <textarea class="form-control z-depth-1" id="exampleFormControlTextarea" style="border-radius: 30px" name="comment_text" rows="2" placeholder="comment here...."></textarea>
+                  </div>
+                  <div class="col-md-2">
+                      <input type="submit" class="btn btn-outline-success waves-effect" style="border-radius: 30px;"  value="Comment">
+                  </div>
+                  </div>
+
+        </div>
+    </div>
+
+</form>
+
+</div>
+</div>
+          {% endfor %}
+
+        <br><br>
+    {% endfor %}
+{% endfor %}
+
+
+</div>
+</div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 fixed-bottom">
+<form action="/login/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+<div class="md-form mb-4 pink-textarea active-pink-textarea">
+  <i class="fas fa-angle-double-right prefix"></i>
+  <textarea id="form21" class="md-textarea form-control" rows="3" name="t1"></textarea>
+  <label for="form21">Write Your Post Here....</label>
+    <br>
+        <input type="file" class="btn btn-outline-primary waves-effect" style="border-radius: 30px" value="Upload Img +" name="image">
+        <button type="submit" class="btn btn-outline-primary waves-effect" style="border-radius: 30px">POST</button>
+    </form>
+
+</div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<script type="javascript">
+    new WOW.init();
+
+</script>
+
+
+</body>
+</html>
